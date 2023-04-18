@@ -1,0 +1,404 @@
+body{
+    background-color: lightgrey;
+    color: black;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size:17px;
+    line-height: 1.5em;
+    margin:0;
+}
+
+.flexbox-container{
+display: flex;
+}
+
+.flexbox-item{
+    width:200px;
+    border: 3px solid black;
+    margin: 10px;
+    background-color: #caffff;
+}
+
+.flexbox-item-1{
+    height: 150px;
+    width: 200px;
+    /* background-image:url(../arya\ logo\ white\ bg.jpg); */
+    background-size: cover;
+}
+
+.flexbox-item-2{
+    height: 70px;
+    width:1050px; 
+}
+
+.flexbox-item-2 h1{
+    font-family:Tahoma;
+    font-weight: 80;
+    font-style: italic;
+    text-align: center;
+}
+
+.flexbox-item-3{
+    height: 150px;
+    /* background-image:url(../India-flag.jpg); */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.flexbox2-container{
+    display: flex; 
+    margin-top: 20px; 
+    padding-left: 20px; 
+}
+
+.flexbox2-item{
+    width:200px;
+    border: 3px solid black;
+    margin: 10px;
+    background-color: #caffff;
+}  
+
+.flexbox2-item-1{
+    height: 950px;
+    width: 1450px;
+}
+
+
+.buttons{
+  margin-top: 50px;
+  justify-content: center;
+  padding-left: 50px;
+}
+
+ .button{
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  } 
+  
+  .button1 {
+    background-color: #caffff; 
+    color: black; 
+    border: 3px solid black;
+  }
+  
+  .button1:hover {
+    background-color: #334155;
+    color: white;
+  }
+  
+  .button2 {
+    background-color: #caffff; 
+    color: black; 
+    border: 3px solid black;
+  }
+  
+  .button2:hover {
+    background-color: #334155;
+    color: white;
+  }
+
+  .button3 {
+    background-color: #caffff; 
+    color: black; 
+    border: 3px solid black;
+  }
+  
+  .button3:hover {
+    background-color: #334155;
+    color: white;
+  }
+
+.inputfield{
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 2px;  
+}
+
+.button4 {
+    background-color: #caffff; 
+    color: black; 
+    border: 3px solid black;
+  }
+  
+  .button4:hover {
+    background-color: #334155;
+    color: white;
+  }
+
+
+/* .graphs{
+    margin-top: 0px; 
+    margin-bottom: 0px;
+} 
+
+.chart{
+   width: 50%; 
+   height: 200%; 
+   margin-top: 0px;
+   margin-bottom: 0px; 
+} */
+
+.graphrow1{
+  display: flex;
+  margin-top: 0px;
+   width: 500px;
+  height: 500px; 
+}
+
+/* .graphrow2{
+  display: flex;
+  margin-top: 0px;
+}
+
+.graphrow3{
+  display: flex;
+  margin-top: 0px;
+} */
+
+.flexbox3-container{
+  display: flex; 
+  padding-left: 20px; 
+}
+
+.flexbox3-item{
+  width:200px;
+  border: 3px solid black;
+  margin: 10px;
+  background-color: #caffff;
+}  
+
+.flexbox3-item-1{
+  height: 550px;
+  width: 1450px;
+}
+
+/* .flexbox3-item-2{
+  height: 200px;
+  width: 200px;
+   
+}
+
+.flexbox3-item-3{
+  height: 200px;
+  width: 200px;
+} */
+
+
+.flexbox4-container{
+  display: flex; 
+  padding-left: 0px; 
+}
+
+.flexbox4-item{
+  width:200px;
+  border: 3px solid black;
+  margin: 10px;
+  background-color: #caffff;
+}  
+
+.flexbox4-item-1{
+  height: 500px;
+  width: 1500px;
+}
+
+
+
+.flowchart{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #caffff;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+  padding: 5px;
+  margin: 0px 0px;
+  height: 60px;
+  width: 150px;
+  border: black 3px solid;
+}
+
+.card:hover{
+  background-color: lime;
+  color: #333;
+  cursor: none;
+}
+
+.arrow{
+  width: 80px;
+  height: 30px;
+}
+
+
+
+ .flexbox-single{
+   display: flex;  
+   justify-content: center; 
+   padding-left: 20px;
+ }
+  .flexbox-data{
+      width:200px;
+      border: 3px solid black;
+      margin: 10px;
+      background-color: #caffff;
+  }
+
+  .flexbox-data-1{
+    display: flex;
+    margin-top: 20px;
+    height: 120px;
+    width:1250px;
+}
+
+
+
+.tabs{
+  margin-top: 20px;
+  justify-content: center;
+  /* padding-left: 10px;  */
+}
+
+.tab{
+  border: none;
+  color: white;
+   padding:16px; 
+   /* text-align: center;  */
+  /* text-decoration: none; */
+  display: inline-block;
+  font-size: 18px;
+    margin:0px 10px 10px 0px;  
+  transition-duration: 0.4s;
+  cursor: pointer;
+} 
+
+.activetab1 {
+  background-color: #caffff; 
+  color: black; 
+  border: 3px solid black;
+}
+
+.activetab1:hover {
+  background-color: #334155;
+  color: white;
+}
+
+.tab2{
+  background-color: #caffff; 
+  color: black; 
+  border: 3px solid black;
+}
+
+.tab2:hover {
+  background-color: #334155;
+  color: white;
+}
+
+.tab3 {
+  background-color: #caffff; 
+  color: black; 
+  border: 3px solid black;
+}
+
+.tab3:hover {
+  background-color: #334155;
+  color: white;
+}
+
+.tab.active{
+background-color: #334155;
+color: white;
+}
+
+/* .tab.tab1{
+  height: 40px;
+  width: 40px;
+}
+.tab.tab2{
+  height: 40px;
+  width: 40px;
+}
+.tab.tab3{
+  height: 40px;
+  width: 40px;
+} */
+
+
+
+    [data-tab-content] {
+  display: none;
+} 
+
+ .active[data-tab-content] {
+  display: block;
+}    
+
+#map{ 
+  height: 500px; 
+}
+
+#mygraph1{
+  margin-left: 500px; 
+  margin-bottom: 100px;
+}
+
+.threedee{
+  display: flex;
+}
+
+
+.tg {
+  border-collapse:collapse;
+  border-spacing:0;
+  width: 50%;
+  height: 50%; 
+  margin-left: 5px;
+  margin-top: 0px;
+}
+.tg td{
+  border-color:darkblue;
+  border-style:solid;
+  /* border-width:1px; */
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:11.35px;
+  overflow:hidden;
+  padding:10px 10px;
+  word-break:normal;
+}
+.tg th{
+border-color:darkblue;
+border-style:solid;
+ /* border-width:1px;  */
+font-family:'Times New Roman', Times, serif;
+font-size:11.7px;
+font-weight:normal;
+overflow:hidden;
+padding:10px 10px;
+word-break:normal;
+position: sticky;
+}
+.tg .tg-0lax{
+  text-align:left;
+  vertical-align:top;
+}
+
+
+ ::-webkit-scrollbar{
+  display: none;
+} 

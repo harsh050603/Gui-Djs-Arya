@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function readCSV() {
+        fetch("trial.csv")
+          .then((response) => response.text())
+          .then((data) => {
+            setTimeout(() => {
+              createTable(data);
+            }, 3000);
+          });
+      }
+      function createTable(data) {
+        var lines = data.split("\n");
+        var table = document.createElement("table");
+        var tableBody = document.createElement("tbody");
+
+        for (var i = 0; i < lines.length; i++) {
+          
+          var cells = lines[i].split(",");
+          if (cells.length > 1) {
+            var row = document.createElement("tr");
+            for (var j = 0; j < cells.length; j++) {
+              var cell = document.createElement("td");
+              var cellText = document.createTextNode(cells[j]);
+              cell.appendChild(cellText);
+              row.appendChild(cell);
+            }
+            // setTimeout(() => {
+            tableBody.appendChild(row);
+        //   }, 3000)
+          }
+        }
+
+        table.appendChild(tableBody);
+        document.getElementById("table-container").appendChild(table);
+      }
+    </script>
+  </head>
+  <body onload="readCSV()">
+    <div id="table-container"></div>
+  </body>
+</html>

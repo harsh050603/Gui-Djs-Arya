@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>frontend</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src='https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js'></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+crossorigin=""></script>
+<script type="text/javascript" src="https://unpkg.com/vis-graph3d@latest/dist/vis-graph3d.min.js"></script>
+</head>
+<body>
+     
+    <div class="flexbox-container">
+    <div class="flexbox-item flexbox-item-1"  style="background-image: url(./arya\ logo\ white\ bg.jpg);" ></div>
+
+    <div class="flexbox-item flexbox-item-2">
+        <div class="heading">
+        <h1>TEAM_1033-DJS ARYA</h1>
+        </div>
+    <div class="buttons">
+        <button class="button button1">START</button>
+        <button class="button button2">STOP</button>
+        <button class="button button3">CALIBRATE</button>
+        <input class="inputfield" type="text" placeholder="Enter CMD">
+        <button class="button button4">SUBMIT CMD</button>
+    </div>
+    </div>
+    
+    <div class="flexbox-item flexbox-item-3"  style="background-image: url(./India-flag.jpg);" ></div>
+    </div>
+    
+    <div class="flexbox-state">
+        <div class="flowchart">
+            <div id="launch" class="card"><h3>LAUNCH</h3></div>
+            <img src="./arrow.jpg" alt="" class="arrow">
+            <div id="ascent" class="card"><h3>ASCENT</h3></div>
+            <img src="./arrow.jpg" alt="" class="arrow">
+            <div id="rocket_separation" class="card"><h3>ROCKET<br>SEPARATION</h3></div>
+            <img src="./arrow.jpg" alt="" class="arrow">
+            <div id="descent" class="card"><h3>DESCENT</h3></div>
+            <img src="./arrow.jpg" alt="" class="arrow">
+            <div id="hs_released" class="card"><h3>HEAT SHIELD<br>RELEASED</h3></div>
+            <img src="./arrow.jpg" alt="" class="arrow">
+            <div id="landed" class="card"><h3>LANDED</h3></div>
+        </div>
+    </div>
+
+
+    <div class="flexbox-single">
+        <div class="flexbox-data flexbox-data-1">
+        <h3>&nbsp;&nbsp;MISSION_TIME:&nbsp;01:12:23:59&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>&nbsp;&nbsp;GPS_TIME:&nbsp;5:30P.M.</h3>
+        <h3>PACKET_COUNT:&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;<br><br>MAST_RAISED:&nbsp;N</h3>
+        <h3>GPS_SATS:&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>MODE:&nbsp;S</h3>
+        <h3>PC_DEPLOYED:&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>HS_DEPLOYED:&nbsp;P</h3>
+        <h3>GPS_LATITUDE:&nbsp;10N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>GPS_LONGITUDE:&nbsp;30W</h3>
+        <h3>TILT_X:&nbsp;32&#176;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>TILT_Y:&nbsp;23&#176;</h3>
+    </div>
+    
+        <div class="tabs">
+        <button data-tab-target="#chartsid" class="tab activetab1">CHARTS: 2D+3D</button> 
+        <button data-tab-target="#maps" class="tab tab2">MAPS</button>
+        <button data-tab-target="#csv" class="tab tab3">CSV</button>
+        </div>
+    </div>
+
+    <div class="tab-content">
+    <div class="flexbox2-container">
+<div id="chartsid" data-tab-content class="flexbox2-item flexbox2-item-1 active">
+    <!-- <div class="graphs"> -->
+    <!-- <div class="chart"> -->
+   <div class="graphrow1"> <canvas id="mychart1" width="200px" height="200px"></canvas> <canvas id="mychart2" width="200px" height="200px"></canvas><canvas id="mychart3" width="200px" height="200px"></canvas></div>
+    <!-- <div class="graphrow2"> <canvas id="mychart3" width="200px" height="200px"></canvas> <canvas id="mychart4" width="200px" height="200px"></canvas></div>  -->
+    <!-- <div class="graphrow3"> <canvas id="mychart5" width="200px" height="200px"></canvas> <canvas id="mychart6" width="200px" height="200px"></canvas></div>  -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <div class="threedee">
+    <div id="mygraph1"></div>
+    </div>
+    </div>
+        </div>
+
+          <div class="flexbox3-container">
+             <div id="maps" data-tab-content class="flexbox3-item flexbox3-item-1"> 
+              &nbsp;&nbsp;&nbsp;&nbsp;MAPS<div id="map"></div>
+            </div>  
+        </div>  
+
+         <div class="flexbox4-container">
+             <div id="csv" data-tab-content class="flexbox4-item flexbox4-item-1"> 
+                &nbsp;&nbsp;&nbsp;&nbsp;CSV DATA
+                    <table class="tg">
+                    <thead>
+                       <tr>
+                        <th class="tg-01ax">TEAM_ID</th>
+                        <th class="tg-01ax">MISSION_TIME</th>
+                        <th class="tg-0lax">PACKET_COUNT</th>
+                        <th class="tg-01ax">STATE</th>
+                        <th class="tg-0lax">GPS_SATS</th>
+                        <th class="tg-01ax">TEMP</th>
+                        <th class="tg-01ax">VOLT</th>
+                        <th class="tg-0lax">HS_DEPLOYED</th>
+                        <th class="tg-0lax">PC_DEPLOYED</th>
+                        <th class="tg-0lax">MAST_RAISED</th>
+                        <th class="tg-0lax">MODE</th>
+                        <th class="tg-0lax">ALT</th>
+                        <th class="tg-0lax">GPS_LAT</th>
+                        <th class="tg-0lax">GPS_LONG</th>
+                        <th class="tg-0lax">GPS_ALT</th>
+                        <th class="tg-0lax">GPS_TIME</th>
+                        <th class="tg-0lax">TILT_X</th>
+                        <th class="tg-0lax">TILT_Y</th>  
+                        <th class="tg-0lax">CMD_ECHO</th>      
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="tg-0lax">1033</td>
+                        <td class="tg-0lax">01:12:23:59</td>
+                        <td class="tg-0lax">5</td>
+                        <td class="tg-0lax">DESCENT</td>
+                        <td class="tg-0lax">4</td>
+                        <td class="tg-0lax">32&#176;C</td>
+                        <td class="tg-0lax">32V</td>
+                        <td class="tg-0lax">P</td>
+                        <td class="tg-0lax">C</td>
+                        <td class="tg-0lax">N</td>
+                        <td class="tg-0lax">S</td>
+                        <td class="tg-0lax">600m</td>
+                        <td class="tg-0lax">20N</td>
+                        <td class="tg-0lax">30W</td>
+                        <td class="tg-0lax">500m</td>
+                        <td class="tg-0lax">5:30p.m.</td>
+                        <td class="tg-0lax">23&#176;C</td>
+                        <td class="tg-0lax">23&#176;C</td>
+                        <td class="tg-0lax">CMD_ECHO</td>
+                      </tr>
+
+                      <tr>
+                        <td class="tg-0lax">1033</td>
+                        <td class="tg-0lax">01:12:23:59</td>
+                        <td class="tg-0lax">5</td>
+                        <td class="tg-0lax">DESCENT</td>
+                        <td class="tg-0lax">4</td>
+                        <td class="tg-0lax">32&#176;C</td>
+                        <td class="tg-0lax">32V</td>
+                        <td class="tg-0lax">P</td>
+                        <td class="tg-0lax">C</td>
+                        <td class="tg-0lax">N</td>
+                        <td class="tg-0lax">S</td>
+                        <td class="tg-0lax">600m</td>
+                        <td class="tg-0lax">20N</td>
+                        <td class="tg-0lax">30W</td>
+                        <td class="tg-0lax">500m</td>
+                        <td class="tg-0lax">5:30p.m.</td>
+                        <td class="tg-0lax">23&#176;C</td>
+                        <td class="tg-0lax">23&#176;C</td>
+                        <td class="tg-0lax">CMD_ECHO</td>
+                      </tr>
+
+                      <tr>
+                        <td class="tg-0lax">1033</td>
+                        <td class="tg-0lax">01:12:23:59</td>
+                        <td class="tg-0lax">5</td>
+                        <td class="tg-0lax">DESCENT</td>
+                        <td class="tg-0lax">4</td>
+                        <td class="tg-0lax">32&#176;C</td>
+                        <td class="tg-0lax">32V</td>
+                        <td class="tg-0lax">P</td>
+                        <td class="tg-0lax">C</td>
+                        <td class="tg-0lax">N</td>
+                        <td class="tg-0lax">S</td>
+                        <td class="tg-0lax">600m</td>
+                        <td class="tg-0lax">20N</td>
+                        <td class="tg-0lax">30W</td>
+                        <td class="tg-0lax">500m</td>
+                        <td class="tg-0lax">5:30p.m.</td>
+                        <td class="tg-0lax">23&#176;C</td>
+                        <td class="tg-0lax">23&#176;C</td>
+                        <td class="tg-0lax">CMD_ECHO</td>
+                      </tr>
+
+                      <tr>
+                        <td class="tg-0lax">1033</td>
+                        <td class="tg-0lax">01:12:23:59</td>
+                        <td class="tg-0lax">5</td>
+                        <td class="tg-0lax">DESCENT</td>
+                        <td class="tg-0lax">4</td>
+                        <td class="tg-0lax">32&#176;C</td>
+                        <td class="tg-0lax">32V</td>
+                        <td class="tg-0lax">P</td>
+                        <td class="tg-0lax">C</td>
+                        <td class="tg-0lax">N</td>
+                        <td class="tg-0lax">S</td>
+                        <td class="tg-0lax">600m</td>
+                        <td class="tg-0lax">20N</td>
+                        <td class="tg-0lax">30W</td>
+                        <td class="tg-0lax">500m</td>
+                        <td class="tg-0lax">5:30p.m.</td>
+                        <td class="tg-0lax">23&#176;C</td>
+                        <td class="tg-0lax">23&#176;C</td>
+                        <td class="tg-0lax">CMD_ECHO</td>
+                      </tr>
+                      
+
+                    </tbody>
+                    </table>
+            </div>  
+        </div>  
+        </div>
+
+     <div style="margin-top:40px;"></div> 
+</body>
+ <script src="./script.js"></script> 
+ <script src="./csvreader.js"></script> 
+ <script src="./server.js"></script> 
+
+</html>
